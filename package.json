@@ -1,0 +1,54 @@
+{
+  "name": "openclaw-plugin-tradingagents",
+  "version": "0.1.0",
+  "description": "OpenClaw tool plugin for running TradingAgents from chat channels such as Feishu/Lark.",
+  "type": "module",
+  "private": false,
+  "license": "MIT",
+  "homepage": "https://github.com/tauricresearch/tradingagents",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZSCDumin/openclaw-plugin-tradingagents.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "openclaw",
+    "openclaw-plugin",
+    "tradingagents",
+    "feishu",
+    "lark",
+    "finance",
+    "stocks"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "plugin:build": "npm run build && openclaw plugins build --entry ./dist/index.js",
+    "plugin:validate": "npm run build && openclaw plugins validate --entry ./dist/index.js",
+    "prepack": "npm run plugin:build",
+    "test": "vitest run"
+  },
+  "files": [
+    "dist",
+    "python",
+    "openclaw.plugin.json",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "openclaw": ">=2026.5.17"
+  },
+  "dependencies": {
+    "typebox": "^1.1.38"
+  },
+  "devDependencies": {
+    "openclaw": "latest",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  },
+  "openclaw": {
+    "extensions": [
+      "./dist/index.js"
+    ]
+  }
+}
