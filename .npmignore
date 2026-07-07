@@ -1,0 +1,6 @@
+python/__pycache__/
+dist/*.test.js
+dist/*.test.d.ts
+src/
+tsconfig.json
+PUBLISHING.md
